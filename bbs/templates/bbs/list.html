@@ -2,12 +2,14 @@
 {% block html_body %}
     <script src="/static/js/menu_btn.js"></script>
     <div class="container">
+        <br>
         <h1>Bulletin Board System(BBS)</h1>
-            <button type="button"
-                    class="btn btn-primary"
-                    id="new_post_btn"
-                    onclick="new_post()">새글 작성</button>
-            <div class="m-1"></div>
+        <br>
+        <button type="button"
+                class="btn btn-primary"
+                id="new_post_btn"
+                onclick="new_post()">새글 작성</button>
+        <div class="m-1"></div>
 
         <table class="table table-hover">
             <thead class="thead-dark">
@@ -27,7 +29,7 @@
                 <td>{{ post.b_title }}</td>
                 <td>{{ post.b_author }}</td>
                 <td>{{ post.b_date }}</td>
-                <td>0</td>
+                <td>{{ post.comment_set.count }}</td>
                 <td>{{ post.b_like_count }}</td>
             </tr>
             {% endfor %}
