@@ -7,3 +7,7 @@ def b_list(request):
     posts = Board.objects.all().order_by('-id')
     context = {'posts': posts}
     return render(request, 'bbs/list.html', context)
+
+
+def b_create(request):
+    pass

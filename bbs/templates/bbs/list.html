@@ -1,6 +1,37 @@
 {% extends 'base.html' %}
 {% block html_body %}
+    <script src="/static/js/menu_btn.js"></script>
     <div class="container">
-        <h1>Bulletin Board System</h1>
+        <h1>Bulletin Board System(BBS)</h1>
+            <button type="button"
+                    class="btn btn-primary"
+                    id="new_post_btn"
+                    onclick="new_post()">새글 작성</button>
+            <div class="m-1"></div>
+
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">글제목</th>
+                    <th scope="col">글작성자</th>
+                    <th scope="col">글작성일</th>
+                    <th scope="col">댓글수</th>
+                    <th scope="col">좋아요</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for post in posts %}
+            <tr>
+                <td>{{ post.id }}</td>
+                <td>{{ post.b_title }}</td>
+                <td>{{ post.b_author }}</td>
+                <td>{{ post.b_date }}</td>
+                <td>0</td>
+                <td>{{ post.b_like_count }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
     </div>
 {% endblock %}
