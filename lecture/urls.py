@@ -19,6 +19,13 @@ from django.views.generic.base import TemplateView
 
 urlpatterns = [
     path("", TemplateView.as_view(template_name='index.html'), name='home'),
+    path("jquery01/", TemplateView.as_view(template_name='jQuery01.html'), name="jquery01"),
+    path("jquery02/", TemplateView.as_view(template_name='jQuery02.html'), name="jquery02"),
+    path("jquery03/", TemplateView.as_view(template_name='jQuery03.html'), name="jquery03"),
+    path("jquery04/", TemplateView.as_view(template_name='jQuery04.html'), name="jquery04"),
+    path("jquery05/", TemplateView.as_view(template_name='jQuery05.html'), name="jquery05"),
+    path("jquery06/", TemplateView.as_view(template_name='jQuery06.html'), name="jquery06"),
+    path("jquery07/", TemplateView.as_view(template_name='jQuery07.html'), name="jquery07"),
     path("admin/", admin.site.urls),
     path("bbs/", include('bbs.urls')),
 ]
